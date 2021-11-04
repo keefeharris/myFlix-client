@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/container';
 import Row from 'react-bootstrap/row';
 import Col from 'react-bootstrap/col';
-import CardGroup from 'react-bootstrap/cardgroup';
 import Card from 'react-bootstrap/card';
 import Form from 'react-bootstrap/form';
 import Button from 'react-bootstrap/button';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export function RegisterView(props) {
     const [Username, setUsername] = useState('');
@@ -21,7 +21,6 @@ export function RegisterView(props) {
     };
 
     return (
-        <Container>
             <Row>
                 <Col></Col>
                 <Col>
@@ -52,7 +51,6 @@ export function RegisterView(props) {
                 </Col>
                 <Col></Col>
             </Row>
-        </Container>
     );
 }
 
