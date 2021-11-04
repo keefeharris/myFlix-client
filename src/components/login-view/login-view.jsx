@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/container';
+import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/card';
+
+import './login-view.scss';
 
 
 export function LoginView(props) {
@@ -21,10 +23,10 @@ export function LoginView(props) {
     };
 
     return (
-        <Container>
+        <Container fluid className="loginContainer">
             <Row>
-                <Col></Col>
-                <Col>
+                <Col xs={2} sm={2} md={3} lg={4} xl={4}></Col>
+                <Col xs={8} sm={8} md={6} lg={4} xl={4}>
                     <Card>
                         <Card.Body>
                             <Card.Title>Welcome to MyFlix</Card.Title>
@@ -43,7 +45,7 @@ export function LoginView(props) {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col></Col>
+                <Col xs={2} sm={2} md={3} lg={4} xl={4}></Col>
             </Row>
         </Container>
     );
