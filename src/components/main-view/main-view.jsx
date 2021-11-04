@@ -6,7 +6,6 @@ import { MovieView } from '../movie-view/movie-view';
 import { RegisterView } from '../registration-view/registration-view';
 import Row from 'react-bootstrap/row';
 import Col from 'react-bootstrap/col';
-import Container from 'react-bootstrap/container';
 
 class MainView extends React.Component {
 
@@ -71,16 +70,20 @@ class MainView extends React.Component {
                 {selectedMovie
                     ? (
                         <Row>
-                            <Col>
+                            <Col xs={1} md={2} lg={3} xl={3.5}></Col>
+                            <Col xs={10} md={8} lg={6} xl={5}>
                                 <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                            </Col>
+                            </Col>  
+                            <Col xs={1} md={2} lg={3} xl={3.5}></Col>        
                         </Row>
                     )
-                    : (
+                    : 
+                    (
                         <Row className="justify-content-md-center">
                             {movies.map(movie => (
-                                <Col md={1}>
+                                <Col sm={12} md={6} xl={4}>
                                     <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+                                    {/*xs = 0px-558px, sm >=559px, md >=750px, lg >=975px, xl >=1183px*/}
                                 </Col>
                             ))}
                         </Row>
