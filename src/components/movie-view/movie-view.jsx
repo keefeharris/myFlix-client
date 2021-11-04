@@ -1,43 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//testing for github pages
+import { Card, CardGroup, Button } from 'react-bootstrap';
+
 export class MovieView extends React.Component {
 
     render() {
         const { movie, onBackClick } = this.props;
 
         return (
-            <div className="movie-view">
-                <div className="movie-poster">
-                    <img src={movie.ImagePath} />
-                </div>
-                <div className="movie-title">
-                    <span className="label">Title: </span>
-                    <span className="value">{movie.Title}</span>
-                </div>
-                <div className="movie-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{movie.Description}</span>
-                </div>
-                <div className="genre-title">
-                    <span className="label">Genre: </span>
-                    <span className="value">{movie.Genre.Name}</span>
-                </div>
-                <div className="genre-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{movie.Genre.Description}</span>
-                </div>
-                <div className="director-name">
-                    <span className="label">Director: </span>
-                    <span className="value">{movie.Director.Name}</span>
-                </div>
-                <div className="director-bio">
-                    <span className="label">Bio: </span>
-                    <span className="value">{movie.Director.Bio}</span>
-                </div>
-                <button onClick={() => { onBackClick(null); }}>Back</button>
-
-            </div>
+            <>
+                <Nav>
+                    <Nav.Item>
+                        <Nav.Link>Home</Nav.Link>
+                    </Nav.Item>
+                    <NavDropdown title="Profile" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">User Information</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Favorite Movies</NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Item>
+                        <Nav.Link>Logout</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+                <CardGroup>
+                    <Card>
+                        <Card.Img variant="top" src={movie.ImagePath} />
+                        <Card.Body>
+                            <Card.Title>{movie.Title}</Card.Title>
+                            <Card.Text>Description: {movie.Description}</Card.Text>
+                            <Card.Text>
+                                Genre: {movie.Genre.Name} <br></br>
+                                {movie.Genre.Description}
+                            </Card.Text>
+                            <Card.Text>
+                                Director: {movie.Director.Name} <br></br>
+                                {movie.Director.Bio}
+                            </Card.Text>
+                            <Button onClick={() => { onBackClick(null); }}>Back</Button>
+                        </Card.Body>
+                    </Card>
+                </CardGroup>
+            </>       
         );
     }
 }
