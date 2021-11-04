@@ -1,4 +1,11 @@
 .my-flix {
   color: steelblue;
 }
+* {
+  box-sizing: border-box;
+}
+
+.loginContainer {
+  background: #5c1818;
+}
 /*# sourceMappingURL=index.caa67093.css.map */
